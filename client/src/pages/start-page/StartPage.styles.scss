@@ -1,0 +1,18 @@
+.start-page-conatiner {
+    grid-row: 2 / 5;
+    grid-column: center-start / center-end;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &--h1 {
+        margin: 0; 
+        padding: 0;
+    }
+
+    &--p {
+        cursor: pointer;
+    }
+}

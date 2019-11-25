@@ -2,6 +2,11 @@ import React from "react";
 import axios from "axios";
 import { saveAs } from "file-saver";
 
+import {Route} from 'react-router-dom';
+import StartPage from './pages/start-page/StartPage.component';
+
+import "./sass/global/main.scss";
+
 class App extends React.Component {
   state = {
     name: "",
@@ -29,32 +34,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <input
-          type="text"
-          placeholder="Name"
-          name="name"
-          onChange={this.handleChange}
-        />
-        <input
-          type="number"
-          placeholder="Recipt id"
-          name="reciptId"
-          onChange={this.handleChange}
-        />
-        <input
-          type="number"
-          placeholder="Price 1"
-          name="price 1"
-          onChange={this.handleChange}
-        />
-        <input
-          type="number"
-          placeholder="Price 2"
-          name="price 2"
-          onChange={this.handleChange}
-        />
-        <button onClick={this.createAndDownloadPDF}>Mati śmierdzi</button>
+      <div className="container">
+        <Route exact path="/" component={StartPage}/>
       </div>
     );
   }
