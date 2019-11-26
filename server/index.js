@@ -13,8 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //POST ROUTE: PDF generation and fetching data from frontend
-app.post("/create-pdf", (request, response) => {
-  console.log('body request', request.body)
+const postMethod = app.post("/create-pdf", (request, response) => {
   pdf.create(pdfTemplate(request.body), {}).toFile("result.pdf", error => {
     if (error) {
       response.send(Promise.reject());
@@ -25,8 +24,14 @@ app.post("/create-pdf", (request, response) => {
 });
 
 //GET  - send the generated PDF to clinet
-app.get("/fetch-pdf", (request, response) => {
+const getMethod = app.get("/fetch-pdf", (request, response) => {
   response.sendFile(`${__dirname}/result.pdf`);
 });
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
+const server = app.listen(port, () => console.log(`Listening on port ${port}`));
+
+module.exports = {
+  server, 
+  postMethod, 
+  getMethod
+}

@@ -117,16 +117,16 @@ module.exports = ({ name, price1, price2, receiptId }) => {
                 </tr>
                 <tr class="item">
                    <td>First item:</td>
-                   <td>${price1}$</td>
+                   <td>${price1}PLN</td>
                 </tr>
                 <tr class="item">
                    <td>Second item:</td>
-                   <td>${price2}$</td>
+                   <td>${price2}PLN</td>
                 </tr>
              </table>
              <br />
              <h1 class="justify-center">Total price: ${parseInt(price1) +
-               parseInt(price2)}$</h1>
+               parseInt(price2)}PLN</h1>
           </div>
        </body>
     </html>
