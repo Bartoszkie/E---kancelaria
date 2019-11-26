@@ -1,0 +1,11 @@
+.cart-container {
+    .pdf-template {
+        width: 60rem;
+        transition: .2s ease-in-out all;
+        cursor: pointer;
+
+        &:hover{
+            box-shadow: .4rem 0 10rem .2rem rgba(#000, .4);
+        }
+    }
+}

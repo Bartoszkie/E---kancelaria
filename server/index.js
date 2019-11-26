@@ -14,6 +14,7 @@ app.use(bodyParser.json());
 
 //POST ROUTE: PDF generation and fetching data from frontend
 app.post("/create-pdf", (request, response) => {
+  console.log('body request', request.body)
   pdf.create(pdfTemplate(request.body), {}).toFile("result.pdf", error => {
     if (error) {
       response.send(Promise.reject());

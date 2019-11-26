@@ -1,0 +1,28 @@
+.form {
+    margin-left: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 60rem;
+    height: 50rem;
+
+    input {
+        padding: 1rem .9rem;
+
+        &:not(:last-child) {
+            margin-bottom: .6rem;
+        }
+    }
+
+    button {
+        padding: 1rem .9rem;
+        width: 50%;
+        align-self: center;
+        border-radius: 10rem;
+        border: none;
+
+        cursor: pointer;
+    }
+}

@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
+import pdf from "../../assets/IMG/PDFTemplate.PNG";
+
+import './cart.styles.scss';
 
 const Cart = () => {
-    return (
-        <div className='cart-container'>
-                
-        </div>
-    )
-}
+  return (
+    <div className="cart-container">
+      <img className="pdf-template" src={pdf} alt="404 pic" />
+    </div>
+  );
+};
 
 export default Cart;
