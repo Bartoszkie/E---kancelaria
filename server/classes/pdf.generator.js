@@ -12,7 +12,7 @@ class PDFGenerator {
   locateTemplate() {
     try {
       const html = fs.readFileSync(`${__dirname}${this.fileName}`, "utf8");
-      return this.html = html;
+      return (this.html = html);
     } catch (error) {
       return "Error: readFileSync";
     }
@@ -32,9 +32,9 @@ class PDFGenerator {
   }
 }
 
-const newPDF = new PDFGenerator("/buisness.html", options);
-console.log(newPDF.html = "<html><p>dummy test</p></html>")
-console.log(newPDF.generatePDF());
-console.log(newPDF.html);
+// const newPDF = new PDFGenerator("/buisness.html", options);
+// newPDF.html = "<html><p>dummy test</p></html>";
+// newPDF.generatePDF();
+// newPDF.html;
 
 module.exports = PDFGenerator;
