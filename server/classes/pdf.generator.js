@@ -6,19 +6,19 @@ class PDFGenerator {
   constructor(fileName, options) {
     this.fileName = fileName;
     this.options = options;
+    this.html = "";
   }
 
   locateTemplate() {
     try {
       const html = fs.readFileSync(`${__dirname}${this.fileName}`, "utf8");
-      return html;
+      return this.html = html;
     } catch (error) {
       return "Error: readFileSync";
     }
   }
 
-  generatePDF() {
-    const html = this.locateTemplate();
+  generatePDF(html = this.html) {
     if (html !== "Error: readFileSync") {
       pdf
         .create(html, this.options)
@@ -33,6 +33,8 @@ class PDFGenerator {
 }
 
 const newPDF = new PDFGenerator("/buisness.html", options);
+console.log(newPDF.html = "<html><p>dummy test</p></html>")
 console.log(newPDF.generatePDF());
+console.log(newPDF.html);
 
 module.exports = PDFGenerator;
