@@ -10,7 +10,7 @@ describe("PDF Generator Class tests", () => {
   });
 
   it("test if file is created = should return true", () => {
-    expect(fs.existsSync(`${__dirname}/buisness.html`)).toBe(true);
+    expect(fs.existsSync(`${__dirname}/buisness.pdf`)).toBe(true);
   });
 
   it("test if class contructor is getting proper values", () => {
