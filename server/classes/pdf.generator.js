@@ -2,6 +2,7 @@ const fs = require("fs");
 const pdf = require("html-pdf");
 const options = { format: "Letter" };
 const parseArgs = require("minimist");
+const colors = require("colors");
 
 class PDFGenerator {
   constructor(fileName, options) {
@@ -34,17 +35,14 @@ class PDFGenerator {
 
   handleCommand = ({ content }) => {
     if (content) {
-      console.log(content);
       if (typeof content !== "string") {
-        return console.log("Podaj prawidłową wartość");
+        return "Podaj prawidłową wartość";
       }
     } else {
       if (content === "") {
-        return console.log("Treść nie może być pusta");
+        return "Treść nie może być pusta";
       } else {
-        console.log(
-          'Błędne polecenie. Użyj: node pdf.generator.js --content="treść"'
-        );
+        return 'Błędne polecenie. Użyj: node pdf.generator.js --content="treść"';
       }
     }
   };
@@ -55,10 +53,14 @@ const newPDF = new PDFGenerator("/buisness.html", options);
 const command = parseArgs(process.argv.slice(2, 3));
 delete command._;
 
-newPDF.handleCommand(command);
+commandTest = newPDF.handleCommand(command);
 
-newPDF.html = `<html><p>${command.content}</p></html>`;
-newPDF.generatePDF();
-newPDF.html;
+if (commandTest === undefined) {
+  newPDF.html = `<html><p>${command.content}</p></html>`;
+  newPDF.generatePDF();
+  newPDF.html;
+} else {
+  console.log(commandTest.red);
+}
 
 module.exports = PDFGenerator;
