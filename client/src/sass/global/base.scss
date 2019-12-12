@@ -24,7 +24,7 @@ body {
 
 .container {
     display: grid;
-    grid-template-rows: min-content repeat(3, 1fr) 5vh;
-    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(12, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    grid-template-rows: 10rem repeat(3, 1fr) 10rem;
+    grid-template-columns: [sidebar-start] minmax(5rem, 7rem) [sidebar-end full-start] minmax(6rem, 0.5fr) [full-end center-start] repeat(12, [col-start] minmax(min-content, 14rem) [col-end]) [center-end];
     height: 100vh;
 }

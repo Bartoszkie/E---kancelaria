@@ -3,10 +3,10 @@ const pdf = require("html-pdf");
 const options = { format: "Letter" };
 
 class PDFGenerator {
-  constructor(fileName, options) {
+  constructor(fileName, options, html) {
     this.fileName = fileName;
     this.options = options;
-    this.html = "";
+    this.html = html;
   }
 
   locateTemplate() {
@@ -32,9 +32,8 @@ class PDFGenerator {
   }
 }
 
-// const newPDF = new PDFGenerator("/buisness.html", options);
-// newPDF.html = "<html><p>dummy test</p></html>";
+// const html = "<html><p>dummy test from constructor</p></html>";
+// const newPDF = new PDFGenerator("/buisness.html", options, html);
 // newPDF.generatePDF();
-// newPDF.html;
 
 module.exports = PDFGenerator;
