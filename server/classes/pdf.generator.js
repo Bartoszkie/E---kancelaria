@@ -1,12 +1,11 @@
 const fs = require("fs");
 const pdf = require("html-pdf");
-const options = { format: "Letter" };
 
 class PDFGenerator {
-  constructor(fileName, options, html) {
+  constructor(fileName, html) {
     this.fileName = fileName;
-    this.options = options;
     this.html = html;
+    this.options = { format: "Letter" };
   }
 
   locateTemplate() {
@@ -22,7 +21,7 @@ class PDFGenerator {
     if (html !== "Error: readFileSync") {
       pdf
         .create(html, this.options)
-        .toFile("./buisness.pdf", function(error, response) {
+        .toFile(`./buisness.pdf`, function(error, response) {
           if (error) return "Error occured " + error;
           return response;
         });
@@ -32,8 +31,8 @@ class PDFGenerator {
   }
 }
 
-// const html = "<html><p>dummy test from constructor</p></html>";
-// const newPDF = new PDFGenerator("/buisness.html", options, html);
+// const html = "<html><p>dummy test from new fucking constructor</p></html>";
+// const newPDF = new PDFGenerator("/buisness.html", html);
 // newPDF.generatePDF();
 
 module.exports = PDFGenerator;
