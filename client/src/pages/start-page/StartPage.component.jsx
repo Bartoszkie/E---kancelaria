@@ -1,6 +1,5 @@
 import React from "react";
 import Typography from "../../components/typography/typography.component";
-import "./StartPage.styles.scss";
 import { Link } from "react-router-dom";
 import Fade from "react-reveal/Fade";
 

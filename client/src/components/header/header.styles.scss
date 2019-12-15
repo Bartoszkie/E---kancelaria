@@ -1,6 +1,195 @@
-.header-container {
+.header-container-closed {
+    margin-top: 3rem;
+
     grid-column: full-start / full-end;
+    grid-row: 1 / 2;
     padding: 1rem .5rem;
 
-    border-bottom: .1rem solid rgba(#000000, .5);
+    display: flex;
+    align-items: center;
+
+    @include respond(tab-phone) {
+        grid-column: none;
+        grid-row: none;
+        position: fixed;
+        top: 50%;
+        left: -20%;
+        transform: translateY(-50%);
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
+        z-index: 10;
+    }
+
+    * {
+        &:not(:last-child) {
+            margin-right: 8rem;
+            color: $base-white-color;
+            transform: translateY(0);
+            transition: .2s ease-in-out all;
+
+            @include respond(tab-land) {
+                margin-right: 5rem;
+            }
+
+            @include respond(tab-port) {
+                margin-right: 3rem;
+            }
+
+            @include respond(tab-phone) {
+                &:not(:last-child) {
+                    margin-bottom: 2rem;
+                }
+
+                margin-right: 0;
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                height: .1rem;
+                width: 0%;
+                background-color: $base-white-color;
+                transition: .2s ease-in-out all;
+                transform: translateY(0);
+                opacity: 0;
+            }
+
+            &:hover::after {
+                width: 100%;
+                transform: translateY(.3rem);
+                opacity: 1;
+            }
+
+            &:hover {
+                transform: translateY(-.3rem);
+            }
+        }
+
+        cursor: pointer;
+    }
+
+    &--button {
+        font-size: 1.8rem;
+        margin-left: auto;
+
+        @include respond(tab-land) {
+            font-size: 1.5rem;
+        }
+
+
+        @include respond(tab-port) {
+            font-size: 1.2rem;
+        }
+
+
+        @include respond(tab-phone) {
+            font-size: 1rem;
+        }
+    }
+
+    &::after {
+        content: ""; 
+        display: inline-block;
+        position: absolute;
+        left: 100%;
+        transform: translateX(-50%);
+        width: 10%;
+        height: 100vh;
+        background-color: $base-white-color;
+    } 
+}
+
+.header-container-open {
+    margin-top: 3rem;
+
+    grid-column: full-start / full-end;
+    grid-row: 1 / 2;
+    padding: 1rem .5rem;
+
+    display: flex;
+    align-items: center;
+
+    @include respond(tab-phone) {
+        grid-column: none;
+        grid-row: none;
+        position: fixed;
+        top: 50%;
+        left: 0%;
+        transform: translateY(-50%);
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        height: 100vh;
+        z-index: 10;
+    }
+
+    * {
+        &:not(:last-child) {
+            margin-right: 8rem;
+            color: $base-white-color;
+            transform: translateY(0);
+            transition: .2s ease-in-out all;
+
+            @include respond(tab-land) {
+                margin-right: 5rem;
+            }
+
+            @include respond(tab-port) {
+                margin-right: 3rem;
+            }
+
+            @include respond(tab-phone) {
+                &:not(:last-child) {
+                    margin-bottom: 2rem;
+                }
+
+                margin-right: 0;
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                height: .1rem;
+                width: 0%;
+                background-color: $base-white-color;
+                transition: .2s ease-in-out all;
+                transform: translateY(0);
+                opacity: 0;
+            }
+
+            &:hover::after {
+                width: 100%;
+                transform: translateY(.3rem);
+                opacity: 1;
+            }
+
+            &:hover {
+                transform: translateY(-.3rem);
+            }
+        }
+
+        cursor: pointer;
+    }
+
+    &--button {
+        font-size: 1.8rem;
+        margin-left: auto;
+
+        @include respond(tab-land) {
+            font-size: 1.5rem;
+            margin-left: auto;
+        }
+
+
+        @include respond(tab-port) {
+            font-size: 1.2rem;
+            margin-left: auto;
+        }
+
+
+        @include respond(tab-phone) {
+            font-size: 1rem;
+        }
+    }
 }

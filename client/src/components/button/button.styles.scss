@@ -1,0 +1,21 @@
+.button {
+    background-color: $base-white-color;
+    padding: 1.3rem 2rem;
+
+    text-transform: uppercase;
+    font-weight: 700;
+
+    border: none;
+    outline: none;
+
+    box-shadow: 0rem .1rem .4rem .1rem $base-dark-color;
+    cursor: pointer;
+
+    @include respond(tab-land) {
+        padding: 1rem 1.8rem;
+    }
+
+    @include respond(tab-phone) {
+        padding: .8rem 1.5rem;
+    }
+}

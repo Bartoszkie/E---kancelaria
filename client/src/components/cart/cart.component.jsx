@@ -1,7 +1,6 @@
 import React from "react";
 import pdf from "../../assets/IMG/PDFTemplate.PNG";
 
-import './cart.styles.scss';
 
 const Cart = () => {
   return (
