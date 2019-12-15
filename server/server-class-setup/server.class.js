@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const PDFGenerator = require("../classes/pdf.generator");
+const PDFGenerator = require("../pdf-generator-classes/pdf.generator");
 const pdfTemplate = require("../documents/index");
 
 class Server {
