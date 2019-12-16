@@ -56,7 +56,7 @@ class Form extends React.Component {
           name="price2"
           onChange={this.handleChange}
         />
-        <button onClick={this.createAndDownloadPDF}>Mati śmierdzi</button>
+        <button onClick={this.createAndDownloadPDF}>Generuj PDF</button>
       </div>
     );
   }

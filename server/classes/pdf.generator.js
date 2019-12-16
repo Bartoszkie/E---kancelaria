@@ -32,9 +32,9 @@ class PDFGenerator {
   }
 }
 
-// const newPDF = new PDFGenerator("/buisness.html", options);
-// newPDF.html = "<html><p>dummy test</p></html>";
-// newPDF.generatePDF();
-// newPDF.html;
+const newPDF = new PDFGenerator("/buisness.html", options);
+newPDF.html = "<html><p>dummy test z lapka</p></html>";
+newPDF.generatePDF();
+newPDF.html;
 
 module.exports = PDFGenerator;

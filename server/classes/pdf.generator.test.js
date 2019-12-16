@@ -24,12 +24,12 @@ describe("PDF Generator Class tests", () => {
   it("test if path to template is correct", () => {
     const mockCorrectPath = "/buisness.html";
     const mockObject = new PDFGenerator(mockCorrectPath, options);
-    expect(typeof mockObject.locateTemplate()).toBe("string");
+    expect(mockObject.locateTemplate()).not.toBe("Error: readFileSync");
   });
 
   it("test if content of passed string is equal to content of generated pdf", () => {
     //Mock of htmlTemplate
-    const mockHTMLTemplate = "<html><p>Test syf</p></html>";
+    const mockHTMLTemplate = "<html><p>Test</p></html>";
     //Mock of correctPath
     const mockCorrectPath = "/buisness.html";
     //Mock of initializing object

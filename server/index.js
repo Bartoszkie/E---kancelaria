@@ -1,10 +1,11 @@
+//LIBKI IMPORT
 const express = require("express");
 const bodyParser = require("body-parser");
 const pdf = require("html-pdf");
 const cors = require("cors");
 
+//PDF || APP CONFIG
 const pdfTemplate = require("./documents");
-
 const app = express();
 const port = process.env.PORT || 5000;
 
@@ -12,21 +13,19 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-//POST ROUTE: PDF generation and fetching data from frontend
-const postMethod = app.post("/create-pdf", (request, response) => {
-  pdf.create(pdfTemplate(request.body), {}).toFile("result.pdf", error => {
-    if (error) {
-      response.send(Promise.reject());
-    }
+const postMethod = require('./methods/post-methods/postMethod');
+const getMethod = require('./methods/get-methods/getMethod');
 
-    response.send(Promise.resolve());
-  });
-});
+class KLASAGLOWNA {
+  constructor(postMethod, getMethod) {
+    this.postMethod = postMethod;
+    this.getMethod = getMethod;
+  } 
+}
 
-//GET  - send the generated PDF to clinet
-const getMethod = app.get("/fetch-pdf", (request, response) => {
-  response.sendFile(`${__dirname}/result.pdf`);
-});
+const test = new KLASAGLOWNA(postMethod, getMethod);
+test.postMethod();
+test.getMethod();
 
 const server = app.listen(port, () => console.log(`Listening on port ${port}`));
 
