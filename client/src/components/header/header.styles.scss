@@ -1,195 +1,180 @@
-.header-container-closed {
-    margin-top: 3rem;
+.header-container {
+    width: 100%;
+    position: fixed;
+    top: 3rem;
+    left: 3rem;
+    right: 3rem;
+    z-index: 10;
 
-    grid-column: full-start / full-end;
-    grid-row: 1 / 2;
-    padding: 1rem .5rem;
-
-    display: flex;
-    align-items: center;
-
-    @include respond(tab-phone) {
-        grid-column: none;
-        grid-row: none;
-        position: fixed;
-        top: 50%;
-        left: -20%;
-        transform: translateY(-50%);
-        flex-direction: column;
-        justify-content: center;
-        height: 100vh;
-        z-index: 10;
+    @include respond(tab-change) {
+        width: auto;
+        right: 0;
+        top: 0;
+        left: 0;
     }
 
-    * {
-        &:not(:last-child) {
-            margin-right: 8rem;
+    &-closed {
+        transition: .2s ease-in-out all;
+
+        @include respond(tab-change) {
+            display: grid;
+            grid-template-columns: repeat(2, min-content);
+        }
+
+        .header-container-grid {
+
+            display: none;
+            align-items: center;
+
+            @include respond(tab-change) {
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+            }
+        }
+
+        .header-container-grid>a {
             color: $base-white-color;
-            transform: translateY(0);
+            transform: translateY(.9rem);
             transition: .2s ease-in-out all;
 
-            @include respond(tab-land) {
-                margin-right: 5rem;
-            }
+            &:not(:first-child) {
+                margin-left: 10rem;
 
-            @include respond(tab-port) {
-                margin-right: 3rem;
-            }
-
-            @include respond(tab-phone) {
-                &:not(:last-child) {
-                    margin-bottom: 2rem;
+                @include respond(tab-land) {
+                    margin-left: 7rem;
                 }
 
-                margin-right: 0;
+                @include respond(tab-phone) {
+                    margin-left: 4rem;
+                }
+
+
+                @include respond(tab-change) {
+                    margin-left: 0rem;
+                }
+
             }
 
             &::after {
                 content: "";
-                display: block;
+                background-color: $base-white-color;
+                display: inline-block;
                 height: .1rem;
                 width: 0%;
-                background-color: $base-white-color;
                 transition: .2s ease-in-out all;
                 transform: translateY(0);
-                opacity: 0;
-            }
-
-            &:hover::after {
-                width: 100%;
-                transform: translateY(.3rem);
-                opacity: 1;
             }
 
             &:hover {
-                transform: translateY(-.3rem);
+                transform: translateY(.7rem);
+            }
+
+            &:hover::after {
+                transform: translateY(.3rem);
+                width: 100%;
+            }
+        }
+    }
+
+    &-open {
+        transition: .2s ease-in-out all;
+
+        @include respond(tab-change) {
+            display: grid;
+            grid-template-columns: repeat(2, min-content);
+        }
+
+        .header-container-grid {
+            display: flex;
+            align-items: center;
+
+            @include respond(tab-change) {
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
             }
         }
 
-        cursor: pointer;
-    }
-
-    &--button {
-        font-size: 1.8rem;
-        margin-left: auto;
-
-        @include respond(tab-land) {
-            font-size: 1.5rem;
-        }
-
-
-        @include respond(tab-port) {
-            font-size: 1.2rem;
-        }
-
-
-        @include respond(tab-phone) {
-            font-size: 1rem;
-        }
-    }
-
-    &::after {
-        content: ""; 
-        display: inline-block;
-        position: absolute;
-        left: 100%;
-        transform: translateX(-50%);
-        width: 10%;
-        height: 100vh;
-        background-color: $base-white-color;
-    } 
-}
-
-.header-container-open {
-    margin-top: 3rem;
-
-    grid-column: full-start / full-end;
-    grid-row: 1 / 2;
-    padding: 1rem .5rem;
-
-    display: flex;
-    align-items: center;
-
-    @include respond(tab-phone) {
-        grid-column: none;
-        grid-row: none;
-        position: fixed;
-        top: 50%;
-        left: 0%;
-        transform: translateY(-50%);
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        height: 100vh;
-        z-index: 10;
-    }
-
-    * {
-        &:not(:last-child) {
-            margin-right: 8rem;
+        .header-container-grid>a {
             color: $base-white-color;
-            transform: translateY(0);
+            transform: translateY(.9rem);
             transition: .2s ease-in-out all;
 
-            @include respond(tab-land) {
-                margin-right: 5rem;
-            }
+            &:not(:first-child) {
+                margin-left: 10rem;
 
-            @include respond(tab-port) {
-                margin-right: 3rem;
-            }
-
-            @include respond(tab-phone) {
-                &:not(:last-child) {
-                    margin-bottom: 2rem;
+                @include respond(tab-land) {
+                    margin-left: 7rem;
                 }
 
-                margin-right: 0;
+                @include respond(tab-phone) {
+                    margin-left: 4rem;
+                }
+
+
+                @include respond(tab-change) {
+                    margin-left: 0rem;
+                }
+
             }
 
             &::after {
                 content: "";
-                display: block;
+                background-color: $base-white-color;
+                display: inline-block;
                 height: .1rem;
                 width: 0%;
-                background-color: $base-white-color;
                 transition: .2s ease-in-out all;
                 transform: translateY(0);
-                opacity: 0;
-            }
-
-            &:hover::after {
-                width: 100%;
-                transform: translateY(.3rem);
-                opacity: 1;
             }
 
             &:hover {
-                transform: translateY(-.3rem);
+                transform: translateY(.7rem);
+            }
+
+            &:hover::after {
+                transform: translateY(.3rem);
+                width: 100%;
             }
         }
 
-        cursor: pointer;
+        &--button {
+            margin-left: auto;
+            margin-right: 5rem;
+            justify-self: flex-end;
+
+            @include respond(tab-change) {
+                margin-left: inherit;
+                margin-top: 2rem;
+                margin-right: 0rem;
+            }
+        }
     }
 
     &--button {
-        font-size: 1.8rem;
-        margin-left: auto;
+        display: none;
+        background-color: #fff;
 
-        @include respond(tab-land) {
-            font-size: 1.5rem;
-            margin-left: auto;
+        .el {
+            display: none;
         }
 
+        @include respond(tab-change) {
+            display: flex;
+            align-items: center;
+            width: 2rem;
+            height: 100vh;
 
-        @include respond(tab-port) {
-            font-size: 1.2rem;
-            margin-left: auto;
-        }
+            .el {
+                display: inline-block;
+                transform: rotate(-90deg);
 
+            }
 
-        @include respond(tab-phone) {
-            font-size: 1rem;
         }
     }
 }
+
+
+//Closed behavior 

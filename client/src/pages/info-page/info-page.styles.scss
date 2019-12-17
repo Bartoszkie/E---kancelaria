@@ -1,0 +1,59 @@
+.info-page {
+  &--container {
+    margin-bottom: .5rem;
+
+    grid-column: center-start / sidebar-right-end;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: minmax(5rem, 1fr) minmax(1rem, 25rem) minmax(
+        5rem,
+        1fr
+      );
+  }
+
+  &--heading {
+    justify-self: flex-start;
+  }
+
+  &--col1 {
+    padding: 11rem;
+
+    grid-column: 1 / 2;
+    height: 100%;
+    background-color: $base-white-color;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &--numberBg {
+      font-size: 5rem;
+      font-weight: 400;
+    }
+
+    &--numberSm {
+      font-size: 3rem;
+      font-weight: 400;
+    }
+
+    &--textInfo {
+
+      & > span {
+        font-size: 2rem;
+        font-weight: 400;
+        color: $base-pink-header-color;
+      }
+
+      & > p {
+        text-align: justify;
+      }
+    }
+  }
+
+  &--col2 {
+    &--pic {
+
+    }
+  }
+}
