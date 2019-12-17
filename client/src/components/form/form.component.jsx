@@ -2,8 +2,6 @@ import React from "react";
 import axios from "axios";
 import { saveAs } from "file-saver";
 
-import './form.styles.scss';
-
 class Form extends React.Component {
   state = {
     name: "",

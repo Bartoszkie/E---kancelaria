@@ -1,2 +1,15 @@
-@import "variables.scss"; 
+@import "variables.scss";
+@import "mixins.scss";
 @import "base.scss";
+
+//components
+@import "../../components/button/button.styles.scss";
+@import "../../components/typography/typography.styles.scss";
+@import "../../components/cart-container/cart-container.styles.scss";
+@import "../../components/cart/cart.styles.scss";
+@import "../../components/form/form.styles.scss";
+@import "../../components/header/header.styles.scss";
+
+//pages 
+@import "../../pages/docs-preview/docs-preview.styles.scss";
+@import "../../pages/start-page/StartPage.styles.scss";

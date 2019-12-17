@@ -1,19 +1,20 @@
 import React from "react";
-import "./typography.styles.scss";
 
 const Typography = props => {
   return (
     <>
       {props.type === "huge" ? (
-        <h1 className={`h1--huge ${props.styles}`}>{props.text}</h1>
+        <p className={`p--huge ${props.styles}`}>{props.text}</p>
       ) : props.type === "big" ? (
-        <h2 className={`h2--big ${props.styles}`}>{props.text}</h2>
+        <p className={`p--big ${props.styles}`}>{props.text}</p>
       ) : props.type === "medium" ? (
-        <h3 className={`h3--medium ${props.styles}`}>{props.text}</h3>
+        <p className={`p--medium ${props.styles}`}>{props.text}</p>
       ) : props.type === "small" ? (
-        <h4 className={`h4--small ${props.styles}`}>{props.text}</h4>
+        <p className={`p--small ${props.styles}`}>{props.text}</p>
       ) : props.type === "normall" ? (
         <p className={`normall ${props.styles}`}>{props.text}</p>
+      ) : props.type === undefined ? (
+        <p className="p">{props.text}</p>
       ) : null}
     </>
   );
