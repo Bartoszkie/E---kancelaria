@@ -7,14 +7,10 @@ import { Route } from "react-router-dom";
 import "./sass/global/main.scss";
 
 class App extends React.Component {
-  state = {
-    isHidden: true
-  };
-
   render() {
     return (
       <div className="container">
-        <Header isHidden={this.state.isHidden} />
+        <Header />
         <Route exact path="/" component={StartPage} />
         <Route path="/documents" component={DocsPreviev} />
       </div>
