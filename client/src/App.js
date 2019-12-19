@@ -13,9 +13,9 @@ class App extends React.Component {
       <div className="container">
         <Header />
         <Route exact path="/" component={StartPage} />
-        <Route exact path="/" render={() => <InfoPage number="01" per="03" heading="Krok 1" text="Musisz wypełnić jakiś dokument? Przystąp do szukania!"/>} />
-        <Route exact path="/" render={() => <InfoPage number="02" per="03" heading="Krok 2" text="Znajdź formularz, którego szukasz!"/>} />
-        <Route exact path="/" render={() => <InfoPage number="03" per="03" heading="Krok 3" text="Wypełnij formularz i oczekuj na wygnerowanie - dzięki za współpracę!"/>} />
+        <Route exact path="/" render={() => <InfoPage number="01" per="03" heading="Step 1" text="You need to sign some hard documents? We got You!"/>} />
+        <Route exact path="/" render={() => <InfoPage number="02" per="03" heading="Step 2" text="Find a form what You are looking for..."/>} />
+        <Route exact path="/" render={() => <InfoPage number="03" per="03" heading="Step 3" text="Sign in a form and wait for PDF to begin download - thanks for cooperation!"/>} />
         <Route path="/documents" component={DocsPreviev} />
       </div>
     );
