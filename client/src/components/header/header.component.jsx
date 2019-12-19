@@ -19,7 +19,7 @@ const Header = () => {
             text="Home"
           />
         </Link>
-        <Link to="">
+        <Link to="/documents">
           <Typography
             styles="header-container--nav--link"
             type="small"

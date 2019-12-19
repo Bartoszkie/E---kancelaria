@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { saveAs } from "file-saver";
+import Button from "../button/button.components";
 
 class Form extends React.Component {
   state = {
@@ -54,7 +55,7 @@ class Form extends React.Component {
           name="price2"
           onChange={this.handleChange}
         />
-        <button onClick={this.createAndDownloadPDF}>Generuj PDF</button>
+        <Button onClick={this.createAndDownloadPDF} text="Generate PDF!"/>
       </div>
     );
   }

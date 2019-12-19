@@ -1,28 +1,19 @@
 .form {
-    margin-left: 1rem;
-
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
 
-    width: 60rem;
-    height: 50rem;
-
-    input {
-        padding: 1rem .9rem;
-
-        &:not(:last-child) {
-            margin-bottom: .6rem;
-        }
-    }
-
-    button {
-        padding: 1rem .9rem;
-        width: 50%;
-        align-self: center;
-        border-radius: 10rem;
+    & > input {
+        padding: 3rem 2rem;
         border: none;
+        outline: none;
+        margin-bottom: 5rem;
+        min-width: 70%;
+        border-radius: 10rem;
+        box-shadow: 0 .3rem 1rem .1rem $base-dark-color;
 
-        cursor: pointer;
+        @include respond(phone) {
+            padding: 2rem 1.5rem;
+        }
     }
 }

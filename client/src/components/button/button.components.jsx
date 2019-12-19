@@ -4,7 +4,7 @@ import Typography from "../typography/typography.component";
 const Button = props => {
 
   return (
-    <button
+    <button onClick={props.onClick}
       className={
         props.className !== undefined ? `${props.className} button` : "button"
       }
