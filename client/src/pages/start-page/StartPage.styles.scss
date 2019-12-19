@@ -1,22 +1,194 @@
 .start-page {
-    grid-column: sidebar-left-end / sidebar-right-end;
+    grid-column: center-start / sidebar-right-end;
     height: 100vh;
 
-    margin-top: 15rem;
-
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: minmax(10rem, 1fr) minmax(10rem, 28rem) minmax(10rem, 1fr);
+    grid-template-rows: repeat(2, 1fr) minmax(10rem, 20rem);
+
+
+    @include respond(big-desktop) {
+        margin-top: 5rem; 
+    }
+
+    @include respond(tab-land) {
+        grid-column: sidebar-left-start / sidebar-right-end;
+    }
+
+    @include respond(phone) {
+        grid-template-rows: 1fr 10vh 1fr minmax(10rem, 20rem);
+    }
 
     &--col1 {
+        grid-column: 1 / 2;
+        grid-row: 1 / -1;
 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        height: 100%;
+
+        @include respond(tab-land) {
+            justify-content: center;
+            align-items: center;
+
+            grid-column: 1 / -1;
+            grid-row: 1 / 2;
+
+            text-align: center;
+        }
+
+        
+        @include respond(phone) {
+            padding: 1rem;
+        }
+
+        &--medium {
+            color: $base-pink-header-color;
+            font-weight: 300;
+            margin-bottom: .5rem;
+        }
+
+        &--small {
+            color: $base-grey-font-color;
+        }
+
+        &--huge {
+            color: $base-white-color;
+            font-weight: 500;
+            margin-bottom: .5rem;
+        }
     }
 
     &--col2 {
+        grid-row: 3 / -1;
+        grid-column: 2 / 3;
 
+        display: flex;
+        align-items: flex-end;
+
+        height: 100%;
+
+        @include respond(tab-land) {
+            grid-column: 1 / 2;
+            grid-row: 2 / -1;
+        }
+
+        @include respond(phone) {
+            grid-column: 1 / -1;
+            grid-row: 2 / 3;
+        }
+
+        &--box {
+            padding: 5rem;
+            width: 100%;
+            height: 100%;
+            background-color: $base-white-color;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &--txt {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform: translateY(0);
+            transition: .2s ease-in-out all;
+
+            &::after {
+                width: 0%;
+                height: .1rem;
+                background-color: $base-dark-color;
+                content: "";
+                display: block;
+                transition: .2s ease-in-out all;
+                transform: translateY(0);
+            }
+
+            &:hover::after {
+                transform: translateY(.2rem);
+                width: 100%;
+            }
+
+            &:hover {
+                transform: translateY(-.2rem);
+            }
+        }
     }
 
     &--col3 {
+        padding: 10rem 0rem 10rem 8rem;
 
+        grid-row: 2 / -1;
+        grid-column: 3 / 4;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: min-content 1fr;
+
+        background-color: $base-dark-color;
+
+        @include respond(tab-land) {
+            grid-column: 2 / -1;
+            grid-row: 2 / -1;
+
+            grid-template-rows: min-content min-content 1fr;
+            padding: 6rem 1rem 6rem 2rem;
+        }
+
+        @include respond(phone) {
+            grid-column: 1 / -1;
+            grid-row: 3 / -1;
+        }
+
+        &--heading {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            color: $base-white-color;
+            margin-bottom: 2rem;
+
+            @include respond(tab-land) {
+                justify-self: center;
+                grid-column: 1 / -1;
+                grid-row: 1 / 2;
+            }
+        }
+
+        &--list {
+            align-self: center;
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+            list-style-type: none;
+
+            display: flex;
+            flex-direction: column;
+
+            @include respond(tab-land) {
+                justify-self: center;
+                grid-column: 1 / -1;
+                grid-row: 2 / 3;
+                flex-direction: row;
+                align-items: center;
+            }
+
+            &--item {
+                font-weight: 300;
+                color: $base-white-color;
+                margin-bottom: .8rem;
+                cursor: pointer;
+                transition: .2s ease-in-out all;
+                margin: .5rem .5rem;
+                transform: translateY(0);
+
+                &:hover {
+                    color: white;
+                    transform: translateY(-.2rem);
+                }
+            }
+        }
     }
 }

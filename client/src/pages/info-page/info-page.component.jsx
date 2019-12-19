@@ -3,22 +3,30 @@ import Typography from "../../components/typography/typography.component";
 
 const InfoPage = props => {
   return (
-    <section className="info-page--container">
+    <section className="info-page">
       <div className="info-page--col1">
-        <div className="info-page--heading">
-          <span className="info-page--col1--numberBg">{`${props.number}/`}</span>
-          <span className="info-page--col1--numberSm">{props.per}</span>
+        <div className="info-page--col1--heading">
+          <Typography
+            type="medium"
+            styles="info-page--col1--numberBg"
+            text={`${props.number}/`}
+          />
+          <Typography
+            type="medium"
+            styles="info-page--col1--numberSm"
+            text={props.per}
+          />
         </div>
         <div className="info-page--col1--textInfo">
-          <span className="info-page--textInfo--heading">Heading</span>
           <Typography
-            styles="info-page--textInfo--quote"
+            styles="info-page--col1--textInfo--heading"
+            type="medium"
+            text={props.heading}
+          />
+          <Typography
+            styles="info-page--col1--textInfo--quote"
             type="normall"
-            text="some random text some random textsome random textsome random textsome random textsome random text some random text
-            ome random text some random textsome random textsome random textsome random textsome random text some random text
-            ome random text some random textsome random textsome random textsome random textsome random text some random text
-            ome random text some random textsome random textsome random textsome random textsome random text some random text
-            ome random text some random textsome random textsome random textsome random textsome random text some random text"
+            text={props.text}
           ></Typography>
         </div>
       </div>

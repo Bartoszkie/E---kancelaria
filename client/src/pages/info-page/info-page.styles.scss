@@ -1,59 +1,85 @@
 .info-page {
-  &--container {
-    margin-bottom: .5rem;
+  margin-bottom: .5rem;
+  grid-column: center-start / sidebar-right-end;
+  height: 100vh;
 
-    grid-column: center-start / sidebar-right-end;
-    height: 100vh;
-
-    display: grid;
-    grid-template-columns: minmax(5rem, 1fr) minmax(1rem, 25rem) minmax(
-        5rem,
-        1fr
-      );
+  display: grid;
+  grid-template-columns: minmax(10rem, 1fr) minmax(10rem, 28rem) minmax(10rem, 1fr);
+  
+  @include respond(tab-land) {
+    grid-column: sidebar-left-start / sidebar-right-end;
   }
 
-  &--heading {
-    justify-self: flex-start;
+  @include respond(tab-phone) {
+    grid-template-rows: min-content 1fr;
   }
 
   &--col1 {
-    padding: 11rem;
+    background-color: $base-white-color;
+
+    padding: 8rem;
 
     grid-column: 1 / 2;
+    grid-row: 1 / -1;
     height: 100%;
-    background-color: $base-white-color;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
+    @include respond(tab-land) {
+      padding: 4rem;
+    }
+
+    @include respond(tab-phone) {
+      grid-column: 1 / -1;
+      grid-row: 1 / 2;
+    }
+
+    &--heading {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      @include respond(phone) {
+        margin-bottom: 4rem;
+      }
+    }
+
     &--numberBg {
-      font-size: 5rem;
-      font-weight: 400;
+      font-weight: 500;
+      font-size: 7rem;
     }
 
     &--numberSm {
-      font-size: 3rem;
+      font-size: 5rem;
       font-weight: 400;
+      align-self: flex-end;
     }
 
     &--textInfo {
+      &--heading {
 
-      & > span {
-        font-size: 2rem;
-        font-weight: 400;
-        color: $base-pink-header-color;
       }
 
-      & > p {
-        text-align: justify;
+      &--quote {
+
       }
     }
   }
 
   &--col2 {
-    &--pic {
+    grid-column: 2 / -1;
+    grid-row: 1 / -1;
+    height: 100%;
 
+    @include respond(tab-phone) {
+      grid-column: 1 / -1;
+      grid-row: 2 / -1;
+    }
+
+    img {
+      height: 100%;
     }
   }
 }
