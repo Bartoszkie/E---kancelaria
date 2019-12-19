@@ -2,54 +2,54 @@ import React, { useState } from "react";
 import Typography from "../typography/typography.component";
 import Button from "../button/button.components";
 
+import Hamburger from '../hamburger/hamburger.component';
+
 import { Link } from "react-router-dom";
 
 const Header = () => {
-  const [isHidden, setIsHidden] = useState(false);
-
-  const setHidden = () => {
-    setIsHidden(!isHidden);
-  };
+  const [isHidden, setIsHidden] = useState(true);
 
   return (
     <section className="header-container">
-      <div
-        className={
-          isHidden ? "header-container-closed" : "header-container-open"
-        }
-      >
-        <div className="header-container-grid">
-          <Link to="/">
-            <Typography
-              styles="header-container--h3"
-              type="small"
-              text="Home"
-            />
-          </Link>
-          <Link to="">
-            <Typography type="small" text="Product" />
-          </Link>
-          <Link to="">
-            <Typography type="small" text="How it works" />
-          </Link>
-          <Link to="">
-            <Typography type="small" text="Solutions" />
-          </Link>
-          <Link to="">
-            <Typography type="small" text="Carrers" />
-          </Link>
-          <Button
-            className="header-container-closed--button header-container-open--button"
-            text="go to requests"
+      <nav className={isHidden ? "header-container--nav header--closed" : "header-container--nav header--open"}>
+        <Link to="/">
+          <Typography
+            styles="header-container--nav--link"
+            type="small"
+            text="Home"
           />
-        </div>
-
-        <div className="header-container--button">
-          <div className="el" onClick={() => setHidden()}>
-            Menu
-          </div>
-        </div>
-      </div>
+        </Link>
+        <Link to="">
+          <Typography
+            styles="header-container--nav--link"
+            type="small"
+            text="Product"
+          />
+        </Link>
+        <Link to="">
+          <Typography
+            styles="header-container--nav--link"
+            type="small"
+            text="How it works"
+          />
+        </Link>
+        <Link to="">
+          <Typography
+            styles="header-container--nav--link"
+            type="small"
+            text="Solutions"
+          />
+        </Link>
+        <Link to="">
+          <Typography
+            styles="header-container--nav--link"
+            type="small"
+            text="Career"
+          />
+        </Link>
+        <Button className="header-container--nav--btn" text="Go to requests"/>
+      </nav>
+      <Hamburger isHidden={isHidden} setIsHidden={setIsHidden}/>
     </section>
   );
 };

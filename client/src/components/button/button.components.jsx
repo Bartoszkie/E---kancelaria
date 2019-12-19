@@ -2,6 +2,7 @@ import React from "react";
 import Typography from "../typography/typography.component";
 
 const Button = props => {
+
   return (
     <button
       className={

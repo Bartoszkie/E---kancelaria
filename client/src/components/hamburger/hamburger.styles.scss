@@ -1,0 +1,27 @@
+.hamburger {
+    width: 5rem;
+    height: 5rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    position: fixed;
+    right: 2rem;
+    top: 2rem;
+
+    display: none;
+
+    @include respond(phone) {
+        display: block;
+    }
+
+    &--dash {
+        width: 100%;
+        height: .4rem;
+        background-color: $base-white-color;
+
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+    }
+}
