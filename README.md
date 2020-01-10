@@ -10,3 +10,5 @@ document that is waiting to be downloaded.
 - Server: Express - Node.js framework 
 - Client: React.js - JavaScript library
 
+### Live demo: (with PWA working)
+https://crwn-clothing-cv.herokuapp.com/
