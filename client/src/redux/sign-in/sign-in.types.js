@@ -1,0 +1,5 @@
+export const SingInTypes = {
+  SING_IN_START: "SING_IN_START",
+  SING_IN_SUCCESS: "SING_IN_SUCCESS",
+  SING_IN_FAILURE: "SING_IN_FAILURE"
+};

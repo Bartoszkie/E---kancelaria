@@ -1,0 +1,11 @@
+.orders {
+    grid-column: sidebar-left-start / sidebar-right-end;
+    height: 100vh;
+
+    margin-top: 40%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
