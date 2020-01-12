@@ -44,9 +44,9 @@ class Server {
 }
 
 //instance
-// let server = new Server();
-// server.listen();
-// server.postMethod();
-// server.getMethod();
+let server = new Server();
+server.listen();
+server.postMethod();
+server.getMethod();
 
 module.exports = Server;
