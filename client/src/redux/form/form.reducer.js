@@ -12,10 +12,6 @@ export const FormDataReducer = (state = INITIAL_STATE, action) => {
         ...state,
         formState: action.payload
       };
-    case FORM_TYPES.FORM_INPUT_VALUE_ID: 
-    return {
-      formID: action.payload
-    }
     default:
       return state;
   }

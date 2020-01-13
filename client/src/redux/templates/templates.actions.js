@@ -1,7 +1,7 @@
 import { TEMPLATE_TYPES } from "./templates.types";
 
-export const setTemplateToGenerate = id => ({
-  type: TEMPLATE_TYPES.SET_ID_TO_GENERATE,
+export const setTemplateIdToStore = id => ({
+  type: TEMPLATE_TYPES.GET_ID_FROM_CLICKED_FORM,
   payload: id
 });
 

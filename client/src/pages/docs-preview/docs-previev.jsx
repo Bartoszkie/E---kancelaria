@@ -1,14 +1,9 @@
 import React from "react";
 import Typography from "../../components/typography/typography.component";
 import Form from "../../components/form/form.component";
-import PDFTemplate from "../../assets/IMG/PDFTemplate.PNG";
 import { arrayOfObjects } from "./docs.object";
 import { connect } from "react-redux";
-import {
-  setTemplateToGenerate,
-  setTemplateDataToStore
-} from "../../redux/templates/templates.actions";
-import { FormInputId } from "../../redux/form/form.actions";
+import { setTemplateDataToStore, setTemplateIdToStore } from "../../redux/templates/templates.actions";
 
 class DocsPreviev extends React.Component {
   state = {
@@ -24,7 +19,7 @@ class DocsPreviev extends React.Component {
 
   returnData = item => {
     this.props.sendSettedItem(item);
-    this.props.sendSettedIDS(item.id)
+    this.props.sendSettedId(item.id);
   };
 
   render() {
@@ -78,9 +73,8 @@ class DocsPreviev extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  sendSettedId: state => dispatch(setTemplateToGenerate(state)),
   sendSettedItem: state => dispatch(setTemplateDataToStore(state)),
-  sendSettedIDS: state => dispatch(FormInputId(state))
+  sendSettedId: id => dispatch(setTemplateIdToStore(id))
 });
 
 export default connect(null, mapDispatchToProps)(DocsPreviev);

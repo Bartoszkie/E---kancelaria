@@ -1,7 +1,8 @@
 import { TEMPLATE_TYPES } from "./templates.types";
 
 const INITIAL_STATE = {
-  pictureData: []
+  pictureData: [], 
+  lastId: null
 };
 
 export const TemplateReducer = (state = INITIAL_STATE, action) => {
@@ -11,6 +12,11 @@ export const TemplateReducer = (state = INITIAL_STATE, action) => {
         ...state,
         pictureData: [...state.pictureData, action.payload]
       };
+      case TEMPLATE_TYPES.GET_ID_FROM_CLICKED_FORM:
+        return {
+          ...state,
+          lastId: action.payload
+        };
     default:
       return state;
   }

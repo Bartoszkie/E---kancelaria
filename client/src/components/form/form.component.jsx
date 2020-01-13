@@ -17,7 +17,7 @@ class Form extends React.Component {
   };
 
   changeIdOfGeneratedPDF = () => {
-    const selectedId = this.props.selectedId.pictureId;
+    const selectedId = this.props.selectedId.lastId;
     console.log("na to ustawiam", selectedId);
     this.setState({
       id: selectedId
@@ -41,9 +41,11 @@ class Form extends React.Component {
       });
   };
 
+  componentDidUpdate() {}
+
   render() {
-    console.log("to sa propsy z forma", this.props.selectedId.pictureData);
-    
+    console.log("to jest mój state z forma", this.state);
+    console.log("to jest mój props z forma", this.props);
     return (
       <div className="form">
         <input
@@ -70,12 +72,7 @@ class Form extends React.Component {
           name="price2"
           onChange={this.handleChange}
         />
-        <Button
-          onClick={
-            (this.props.sendValues(this.state), this.createAndDownloadPDF)
-          }
-          text="Generate PDF!"
-        />
+        <Button onClick={this.changeIdOfGeneratedPDF, this.createAndDownloadPDF} text="Generate PDF!" />
       </div>
     );
   }
