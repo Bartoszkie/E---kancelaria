@@ -3,7 +3,10 @@ import Typography from "../../components/typography/typography.component";
 import Form from "../../components/form/form.component";
 import { arrayOfObjects } from "./docs.object";
 import { connect } from "react-redux";
-import { setTemplateDataToStore, setTemplateIdToStore } from "../../redux/templates/templates.actions";
+import {
+  setTemplateDataToStore,
+  setTemplateIdToStore
+} from "../../redux/templates/templates.actions";
 
 class DocsPreviev extends React.Component {
   state = {
@@ -25,7 +28,7 @@ class DocsPreviev extends React.Component {
   render() {
     const { documents, searchField } = this.state;
     const filteredDocuments = documents.filter(document =>
-      document.name.toLowerCase().includes(searchField.toLowerCase())
+      document.keywords.toLowerCase().includes(searchField.toLowerCase())
     );
 
     return (
@@ -53,6 +56,7 @@ class DocsPreviev extends React.Component {
                 key={item.id}
                 onClick={() => this.returnData(item)}
                 src={item.img}
+                alt="pictureOfTemplate"
               />
             ))}
           </div>

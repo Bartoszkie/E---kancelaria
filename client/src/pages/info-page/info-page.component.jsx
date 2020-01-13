@@ -3,7 +3,7 @@ import Typography from "../../components/typography/typography.component";
 
 const InfoPage = props => {
   return (
-    <section className="info-page">
+    <section className="info-page" id="works">
       <div className="info-page--col1">
         <div className="info-page--col1--heading" id="info-page">
           <Typography

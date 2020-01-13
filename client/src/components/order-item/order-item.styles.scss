@@ -62,10 +62,25 @@
         }
 
         &--data {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            &--col1 {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-end;
+                padding-right: 1rem;
+                font-size: 1.6rem;
+            }
+
+            &--col2 {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                font-size: 1.6rem;
+            }
 
             & > p {
                 text-transform: uppercase;

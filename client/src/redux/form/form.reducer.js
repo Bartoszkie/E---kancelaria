@@ -1,16 +1,16 @@
 import { FORM_TYPES } from "./form.types";
 
 const INITIAL_STATE = {
-  formState: null, 
-  formID: 0
+  formState: [],
 };
 
 export const FormDataReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case FORM_TYPES.FORM_INPUT_VALUES:
+      console.log(action.payload);
       return {
         ...state,
-        formState: action.payload
+        formState: [...state.formState, action.payload]
       };
     default:
       return state;

@@ -6,6 +6,7 @@ import { auth } from "../../redux/firebase/firebase.config";
 import Hamburger from "../hamburger/hamburger.component";
 
 import { Link } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 
 const Header = ({ currentUser }) => {
   const [isHidden, setIsHidden] = useState(true);
@@ -19,13 +20,13 @@ const Header = ({ currentUser }) => {
             : "header-container--nav header--open"
         }
       >
-        <Link to="/">
+        <HashLink to="/#home">
           <Typography
             styles="header-container--nav--link"
             type="small"
             text="Home"
           />
-        </Link>
+        </HashLink>
         <Link to="/documents">
           <Typography
             styles="header-container--nav--link"
@@ -33,13 +34,13 @@ const Header = ({ currentUser }) => {
             text="Product"
           />
         </Link>
-        <Link to="/#works">
+        <HashLink to="/#works">
           <Typography
             styles="header-container--nav--link"
             type="small"
             text="How it works"
           />
-        </Link>
+        </HashLink>
         {currentUser ? (
           <div className="header-container--nav--link options" onClick={() => auth.signOut()}>
             SIGN OUT

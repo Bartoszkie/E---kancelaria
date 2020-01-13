@@ -1,12 +1,10 @@
 import React from "react";
 import Typography from "../../components/typography/typography.component";
-import { Link } from "react-router-dom";
-import Fade from "react-reveal/Fade";
 
 const StartPage = () => {
   return (
     <>
-      <section className="start-page">
+      <section className="start-page" id="home">
         <div className="start-page--col1">
           <Typography
             type="medium"
