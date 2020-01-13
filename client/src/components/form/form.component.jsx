@@ -46,9 +46,9 @@ class Form extends React.Component {
       });
   };
 
-  onClickForGenerate = async () => {
-    await this.changeIdOfGeneratedPDF();
-    await this.createAndDownloadPDF();
+  onClickForGenerate = () => {
+    this.changeIdOfGeneratedPDF();
+    this.createAndDownloadPDF();
   };
 
   render() {
@@ -56,25 +56,25 @@ class Form extends React.Component {
       <div className="form">
         <input
           type="text"
-          placeholder="Name"
+          placeholder="Value 1"
           name="name"
           onChange={this.handleChange}
         />
         <input
-          type="number"
-          placeholder="Recipt id"
+          type="text"
+          placeholder="Value 2"
           name="receiptId"
           onChange={this.handleChange}
         />
         <input
-          type="number"
-          placeholder="Price 1"
+          type="text"
+          placeholder="Value 3"
           name="price1"
           onChange={this.handleChange}
         />
         <input
-          type="number"
-          placeholder="Price 2"
+          type="text"
+          placeholder="Value 4"
           name="price2"
           onChange={this.handleChange}
         />

@@ -6,14 +6,6 @@ const Orders = props => {
   const { selectedId, formInput } = props;
   console.log(selectedId.pictureData, formInput.formState);
 
-  if (selectedId.pictureData.length > 0 && formInput.formState.length > 0) {
-    for (let i = 0; i < selectedId.pictureData.length; i++) {
-      if (selectedId.pictureData[i].id === formInput.formState[i].id) {
-        
-      }
-    }
-  }
-
   return (
     <section className="orders">
       {props.selectedId.pictureData.length > 0

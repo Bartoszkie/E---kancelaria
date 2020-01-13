@@ -25,11 +25,11 @@ export const arrayOfObjects = [
   },
   {
     id: 3,
-    name: "sprzedaż nieruchomości",
-    keywords: "sprzedaż nieruchomości",
+    name: "sprzedaż laptopa",
+    keywords: "sprzedaż laptopa laptop",
     img: LaptopTemplate,
     description: "to jest opis sprzedaży nieruchomości, to jest opis sprzedaży nieruchomości, to jest opis sprzedaży nieruchomościto jest opis sprzedaży nieruchomości to jest opis sprzedaży nieruchomościto jest opis sprzedaży nieruchomości to jest opis sprzedaży nieruchomościto jest opis sprzedaży nieruchomości",
     labels: 1,
-    required: ["name"]
+    required: ["Imie", "Nazwisko", "Imie", "Nazwisko", "Miejsce zamieszkania", "Pesel"]
   }
 ];

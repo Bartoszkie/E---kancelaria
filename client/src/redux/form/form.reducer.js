@@ -7,7 +7,6 @@ const INITIAL_STATE = {
 export const FormDataReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case FORM_TYPES.FORM_INPUT_VALUES:
-      console.log(action.payload);
       return {
         ...state,
         formState: [...state.formState, action.payload]
