@@ -15,11 +15,11 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-const PDFGenerator = require("./classes/pdf.generator");
+const PDFGenerator = require("./pdf-generator-classes/pdf.generator");
 
 //POST ROUTE: PDF generation and fetching data from frontend
 const postMethod = app.post("/create-pdf", (request, response) => {
-  const newPDF = new PDFGenerator(null, options, pdfTemplate(request.body));
+  const newPDF = new PDFGenerator(null, pdfTemplate(request.body));
   const generatePDF = newPDF.generatePDF();
   if (generatePDF === "Could not create PDF - template location error") {
     return response.send(Promise.reject());

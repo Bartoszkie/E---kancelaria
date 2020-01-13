@@ -5,7 +5,7 @@ const InfoPage = props => {
   return (
     <section className="info-page">
       <div className="info-page--col1">
-        <div className="info-page--col1--heading">
+        <div className="info-page--col1--heading" id="info-page">
           <Typography
             type="medium"
             styles="info-page--col1--numberBg"
@@ -33,7 +33,7 @@ const InfoPage = props => {
       <div className="info-page--col2">
         <img
           className="info-page--col2--pic"
-          src={"some random text"}
+          src={props.image}
           alt="pic"
         />
       </div>

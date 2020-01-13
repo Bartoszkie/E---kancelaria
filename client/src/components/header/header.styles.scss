@@ -4,6 +4,7 @@
     left: 0;
     width: 100%;
     background-color: $base-dark-color;
+    z-index: 300;
 
     &--nav, .header--closed {
 
@@ -79,7 +80,8 @@
             color: $base-white-color;
             transform: translateY(0);
             transition: .2s ease-in-out all;
-            
+            text-transform: uppercase;
+
             @include respond(tab-port) {
                 margin-left: 1rem;
             }
@@ -108,4 +110,9 @@
             
         }
     }
+}
+
+.options {
+    font-size: 2rem;
+    font-weight: 400;
 }

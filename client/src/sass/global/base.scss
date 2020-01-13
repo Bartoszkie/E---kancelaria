@@ -27,6 +27,5 @@ body {
     display: grid;
     grid-template-columns:
         [sidebar-left-start] minmax(5rem, 7rem) [sidebar-left-end full-start] minmax(6rem, 1fr) [center-start] repeat(12, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end sidebar-right-start] minmax(5rem, 7rem) [sidebar-right-end];
-
     position: relative;
 }

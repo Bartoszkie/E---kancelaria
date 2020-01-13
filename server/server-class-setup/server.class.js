@@ -3,6 +3,8 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const PDFGenerator = require("../pdf-generator-classes/pdf.generator");
 const pdfTemplate = require("../documents/index");
+const pdfTemplate2 = require("../documents/index2");
+const pdfTemplate3 = require("../documents/index3");
 
 class Server {
   constructor() {
@@ -32,7 +34,15 @@ class Server {
 
   postMethod() {
     return this.app.post("/create-pdf", (request, response) => {
-      const newPDF = new PDFGenerator(null, pdfTemplate(request.body));
+      console.log(request.body);
+      let newPDF = undefined; 
+      if(request.body.id === 1) {
+        newPDF = new PDFGenerator(null, pdfTemplate(request.body));
+      } else if(request.body.id === 2) {
+        newPDF = new PDFGenerator(null, pdfTemplate2(request.body));
+      }else if(request.body.id === 3) {
+        newPDF = new PDFGenerator(null, pdfTemplate3(request.body));
+      }
       const generatePDF = newPDF.generatePDF();
       if (generatePDF === "Could not create PDF - template location error") {
         return response.send(Promise.reject());
@@ -44,9 +54,9 @@ class Server {
 }
 
 //instance
-let server = new Server();
+var server = new Server();
 server.listen();
-server.postMethod();
 server.getMethod();
+server.postMethod();
 
 module.exports = Server;

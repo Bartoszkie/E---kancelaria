@@ -46,12 +46,23 @@
         }
 
         &--items {
-            align-self: center;
+            align-self: flex-start;
             grid-column: 1 / -1;
             grid-row: 2 / 3;
             overflow: auto;
+            
+            
+            &_input {
+                margin-top: 1rem;
+                width: 80%;
+                padding: 1rem 2rem;
+                border: none;
+                border-radius: 10rem;
+                outline: none;
+            }
 
             &>img {
+                margin-top: 5rem;
                 min-width: 80%;
                 max-width: 90%;
                 cursor: pointer;
@@ -85,3 +96,4 @@
         &--items {}
     }
 }
+

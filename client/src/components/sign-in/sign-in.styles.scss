@@ -1,0 +1,31 @@
+.sign-in {
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    span {
+        font-size: 1.7rem;
+    }  
+
+    @media only screen and (max-width: 540px){
+        width: 100%;
+        text-align: center;
+    }
+
+    .title {
+        margin: 10px 0;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+
+        @media only screen and (max-width: 540px){
+            flex-direction: column;
+        }
+    }
+}

@@ -1,10 +1,38 @@
 import React from "react";
 import Typography from "../../components/typography/typography.component";
-import Form from '../../components/form/form.component';
-import PDFTemplate from '../../assets/IMG/PDFTemplate.PNG';
+import Form from "../../components/form/form.component";
+import PDFTemplate from "../../assets/IMG/PDFTemplate.PNG";
+import { arrayOfObjects } from "./docs.object";
+import { connect } from "react-redux";
+import {
+  setTemplateToGenerate,
+  setTemplateDataToStore
+} from "../../redux/templates/templates.actions";
+import { FormInputId } from "../../redux/form/form.actions";
 
 class DocsPreviev extends React.Component {
+  state = {
+    searchField: "",
+    documents: arrayOfObjects
+  };
+
+  onChange = e => {
+    this.setState({
+      searchField: e.target.value
+    });
+  };
+
+  returnData = item => {
+    this.props.sendSettedItem(item);
+    this.props.sendSettedIDS(item.id)
+  };
+
   render() {
+    const { documents, searchField } = this.state;
+    const filteredDocuments = documents.filter(document =>
+      document.name.toLowerCase().includes(searchField.toLowerCase())
+    );
+
     return (
       <section className="docs-preview">
         <Typography
@@ -19,9 +47,19 @@ class DocsPreviev extends React.Component {
             text="Documents"
           />
           <div className="docs-preview--grid--items docs-preview--documents--items">
-            <img src={PDFTemplate} alt="pdfTemplate1"/>
-            <img src={PDFTemplate} alt="pdfTemplate1"/>
-            <img src={PDFTemplate} alt="pdfTemplate1"/>
+            <input
+              onChange={this.onChange}
+              className="docs-preview--grid--items_input"
+              type="text"
+              placeholder="Search..."
+            />
+            {filteredDocuments.map(item => (
+              <img
+                key={item.id}
+                onClick={() => this.returnData(item)}
+                src={item.img}
+              />
+            ))}
           </div>
         </div>
         <div className="docs-preview--grid docs-preview--form">
@@ -31,7 +69,7 @@ class DocsPreviev extends React.Component {
             text="Form"
           />
           <div className="docs-preview--grid--items docs-preview--form--items">
-                <Form/>
+            <Form />
           </div>
         </div>
       </section>
@@ -39,4 +77,10 @@ class DocsPreviev extends React.Component {
   }
 }
 
-export default DocsPreviev;
+const mapDispatchToProps = dispatch => ({
+  sendSettedId: state => dispatch(setTemplateToGenerate(state)),
+  sendSettedItem: state => dispatch(setTemplateDataToStore(state)),
+  sendSettedIDS: state => dispatch(FormInputId(state))
+});
+
+export default connect(null, mapDispatchToProps)(DocsPreviev);
